@@ -1,105 +1,101 @@
-# SKI RESORTS CATALOGUE APP IN POWER BI
+# AI INFLUENCE ON JOBS IN 2030 - POWER BI REPORT
 
 ![Project Banner](./Images/logo.jpg)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/downloads/release/python-3130/)
 
-This repository contains a **data analysis project done in Python** exploring how **social media usage**, **screen time**, and **lifestyle habits** affect **mental health indicators** such as happiness, stress, and sleep quality — and delivers an **interactive AI coach** that **predicts stress & happiness**.
+This repository contains a **data analysis project done in Power BI with integration of Python scripts (ML Model)**. It shows the influence of AI on Job Market in 2030. The project uses a **synthetic dataset from Kaggle** to perform descriptive analysis, EDA, ML modeling.
 
-The project uses a **dataset of 500 users** and a **Jupyter Notebook** to perform descriptive statistics, EDA, ML modeling, and visualization.
+The project demonstrates Power BI’s capabilities for creating interactive, app-like dashboards with modern visual design.
+
+[OPEN DASHBOARD ON MICROSOFT SERVICES](https://app.powerbi.com/view?r=eyJrIjoiMTcxYmYwNDktODg0NC00NzhhLThmOGEtMTZhN2E1ODlmNmNmIiwidCI6IjU5YTZhM2Y5LTMwYWItNDBmZi1hNDZhLWYzZThkZDU4OGZhOSIsImMiOjl9)
+
+*ML Model (and any Python script) doesn't work in public link (Microsoft security limits). To use ML Prediction open report file in Power BI Desktop or in online version after sign in.*
+
+---
+
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [Objectives](#objectives)
+3. [Dataset](#dataset)
+...
 
 ---
 
 ## Project Overview
-Social media has become an integral part of modern life, but its impact on well‑being is widely debated. This project analyzes user demographics, platform preferences, and daily habits to uncover patterns affecting mental health.
+AI has become an integral part of modern life, but its impact on jobs market is widely debated. This project detects jobs that are on higher risk of automation, and analyse features (education, years of experience, salary) that may help to save a job.
 
 ### Tools used
+- **Power Bi** – building report
+- **Figma** – prototyping design
 - **Pandas**, **NumPy** – data preparation
-- **Matplotlib**, **Seaborn**, **Plotly** – visualization
+- **Matplotlib** – visualization
 - **Scikit-Learn** – modeling (Random Forest)
-- **Optuna** – hyperparameter tuning
-- **Feature-engine**, **SciPy** – transformations and statistical analysis
-- **Gradio** - interface builder for ML model that renders in browser
 
 **Key components:**
-- Dataset: `Mental_Health_and_Social_Media_Balance_Dataset.csv`
-- Notebook: `da_social_media_stress.ipynb`
+- Dataset: `AI_Impact_On_Jobs_2030_feature_enriched.csv`
+- Power BI Report: `AI_impact.pbix`
 
 ---
 
 ## Objectives
-- Analyze the impact of screen time on stress, sleep, and happiness
-- Evaluate lifestyle factors (exercise, social media‑free days)
-- Compare mental health across age groups, gender, and platforms
-- Study correlations and develop a predictive model with interactive probability cloud
+- Analyze the impact of AI and Automation Index on Job Market in 2030
+- Find jobs and sectors that are on high risk and those that are safe from risk of automation
+- Build Decission Tree that indicates probability frames of risk and its level.
+- Train Machine Learning model to predict risk level of automation
 
 ---
 
 ## Dataset
-**File:** Mental_Health_and_Social_Media_Balance_Dataset.csv  
+**File:** AI_Impact_On_Jobs_2030_feature_enriched.csv  - file afted adding Feature Engeneering columns
 **Source:** Kaggle  
 **Data Source Link:** [open](https://www.kaggle.com/datasets/ayeshaimran123/social-media-and-mental-health-balance/data)  
-**Size:** 500 rows
+**Size:** 3000 rows
 
-| Column | Description |
-|--------|-------------|
-| User_ID | Unique identifier |
-| Age | 16–49 years |
-| Gender | Male, Female, Other |
-| Daily_Screen_Time(hrs) | Average daily screen time |
-| Sleep_Quality(1-10) | Self‑reported sleep quality |
-| Stress_Level(1-10) | Self‑reported stress |
-| Days_Without_Social_Media | Days per month not using social media |
-| Exercise_Frequency(week) | Weekly exercise frequency |
-| Social_Media_Platform | Main platform used |
-| Happiness_Index(1-10) | Self‑reported happiness |
+| Column                     | Description                                                      |
+|----------------------------|------------------------------------------------------------------|
+| Job_Title                  | The title of the job                                              |
+| Average_Salary             | Average annual salary                                              |
+| Years_Experience           | Years of experience                                                |
+| Education_Level            | Education level                                                    |
+| AI_Exposure_Index          | Measure of how much AI impacts or is used in this role            |
+| Tech_Growth_Factor         | Indicator of expected technological growth in this job            |
+| Automation_Probability_2030| Probability that this job will be automated by 2030               |
+| Risk_Category              | Risk classification based on automation or market changes         |
+| Skill_1                    | Primary skill                                             |
+| Skill_2                    | Secondary skill                                          |
+| Skill_3                    | Third skill                                               |
+| Skill_4                    | Fourth skill                                               |
+| Skill_5                    | Fifth skill                                                |
+| Skill_6                    | Sixth skill                                               |
+| Skill_7                    | Seventh skill                                              |
+| Skill_8                    | Eighth skill                                             |
+| Skill_9                    | Ninth skill                                               |
+| Skill_10                   | Tenth skill                                               |
+| Experience_Band            | Range category of experience             |
+| Income_Band                | Range category of income (low, medium, high)                |
+| Job_Sector                 | Sector or industry of the job                                      |
+| Labour_Group               | Classification of workers       |
 
 ---
 
-## Notebook
+## App Structure
 
-Notebook Structure:
+1. **INSIGHTS** – Desctipti analysis, Exploratory Data Analysis
+2. **AUTOMATION TREE** – Decission Tree that indicates probability frames of risk and its level  
+3. **ML MODEL** – Machine Learning model to predict risk level of automation
 
-Title, main objectives and key questions
-1. Import of Libraries
+---
 
-2. Load data
+## App Interface
 
-3. Check the data for cleaning and preprocessing needs
-   - shape
-   - head and tail
-   - info (amount and dtypes)
-   - missing values
-   - duplicates
-   - describe (validating data quality)
-   - unique values
-   - unnecessary drops
-   - multicollinearity
+![APP INTERFACE](./Images/Interface_1.png)  
 
-   3.1 Feature Engineering
-       - creating feature columns
+![APP INTERFACE](./Images/Interface_2.png)
 
-4. Exploratory Data Analysis (EDA) with visualizations and insights
-   - distribution
-   - matrix relations (correlations)
-   - categorical vs numerical boxplots
-   - individual pairs dependencies
-   - complex visualisation
-   - violinplots
-   - feature engineered columns analysis; 3D visualisation
-   - pseudocausal analysis (hypothesis testing)
+![APP INTERFACE](./Images/Interface_3.png)
 
-5. Machine Learning
-   - low correlation columns detect for drop reasons
-   - ML model + parameters
-   - model preciseness metrics
-   - visualization of mistakes frames
-   - visualization of prediction with probability cloud
-   - APP for predictions with browser-based interface
-
-7. Grand Summary
-  
 ---
 
 ## Key Findings
